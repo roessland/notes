@@ -211,3 +211,32 @@ class VelocityVerletSolver:
         compute_time_end = time.process_time()
         compute_time = compute_time_end - compute_time_start
         return SolverResult(self.name, tt, np.vstack([qs, ps]), compute_time)
+
+
+class BDFIntegrator:
+    def __init__(self, f, J, r0, t0=0.0):
+        self.f = f
+        self.J = J
+        self.name = 'VODE BDF'
+        self.integrator = scipy.integrate.BDF(self.f, t0, r0, jac=self.J)
+        self.integrator.set_initial_value(r0, t0)
+
+    def step(self, t):
+
+    def solve(self, tt, x0):
+        compute_time_start = time.process_time()
+        dims = x0.shape[0]
+        K = tt.shape[0]
+        xs = np.zeros((dims, K))
+        xs[:, 0] = x0
+
+        r = scipy.integrate.ode(self.f, self.J)
+        r = r.set_integrator('vode', method='bdf')
+        r = r.set_initial_value(x0, tt[0])
+
+        for k in range(0, K - 1):
+            xs[:, k + 1] = r.integrate(tt[k + 1])
+
+        compute_time_end = time.process_time()
+        compute_time = compute_time_end - compute_time_start
+        return SolverResult(self.name, tt, xs, compute_time)

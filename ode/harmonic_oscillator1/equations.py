@@ -33,7 +33,7 @@ class HarmonicOscillator1:
 
 
 class DoubleSpring1:
-    def __init__(self, k0=5000.0, m0=0.1, k1=5000.0, m1=0.1, L0=0.1, L1=0.1):
+    def __init__(self, k0=100.0, m0=1., k1=50.0, m1=1., L0=0.05, L1=0.05):
         self.k0 = k0
         self.m0 = m0
         self.k1 = k1
