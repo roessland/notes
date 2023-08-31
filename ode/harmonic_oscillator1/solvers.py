@@ -222,6 +222,7 @@ class BDFIntegrator:
         self.integrator.set_initial_value(r0, t0)
 
     def step(self, t):
+        pass
 
     def solve(self, tt, x0):
         compute_time_start = time.process_time()

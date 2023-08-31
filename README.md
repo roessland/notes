@@ -1,6 +1,8 @@
 # notes
 Jupyter Notebooks, mostly. Physics and numerical analysis.
 
+![](./quad-spring.mov)
+
 ## Setup
 
 ```shell
