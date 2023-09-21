@@ -1,3 +1,11 @@
+name = "MyFNC"
+uuid = "8876af07-990d-54b4-ab0e-23690620f79b"
+version = "0.1.0"
+
 [deps]
+AppleAccelerate = "13e28ba4-7ad8-5781-acae-3021b1ed3924"
 FundamentalsNumericalComputation = "e48b7b93-d2a8-4750-aba7-f743ccd5256c"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
